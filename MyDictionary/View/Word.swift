@@ -13,13 +13,11 @@ struct Word: View {
         VStack(alignment: .leading, spacing: 16) {
             ScrollView {
                 HStack {
-                    Text(word.phonetics.first?.text ?? "")
+                    Text(word.phonetics.first?.text ?? word.word ?? "")
                     if let audioLink = word.phonetics.first?.audio {
-                        Button(action: {
-                            // TODO: speak
-                        }, label: {
-                            Image(systemName: "speaker.wave.2.circle.fill")
-                        })
+                        if !audioLink.isEmpty {
+                            PlayAudio(audioLink: audioLink)
+                        }
                     }
                     Spacer()
                 }
@@ -42,6 +40,7 @@ struct Word: View {
                                 }
                             }
                         }
+                        Spacer()
                     }
                     .padding()
                     .background(.orange.opacity(0.2))

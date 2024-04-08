@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D2035A6C2BC384CA0054E5E7 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2035A6B2BC384CA0054E5E7 /* WordModel.swift */; };
+		D2035A6F2BC39C7D0054E5E7 /* PlayAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2035A6E2BC39C7D0054E5E7 /* PlayAudio.swift */; };
 		D21A1D032BC37B2A00EB15A7 /* MyDictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A1D022BC37B2A00EB15A7 /* MyDictionaryApp.swift */; };
 		D21A1D052BC37B2A00EB15A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A1D042BC37B2A00EB15A7 /* ContentView.swift */; };
 		D21A1D072BC37B2D00EB15A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21A1D062BC37B2D00EB15A7 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		D2035A6B2BC384CA0054E5E7 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		D2035A6E2BC39C7D0054E5E7 /* PlayAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAudio.swift; sourceTree = "<group>"; };
 		D21A1CFF2BC37B2A00EB15A7 /* MyDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21A1D022BC37B2A00EB15A7 /* MyDictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDictionaryApp.swift; sourceTree = "<group>"; };
 		D21A1D042BC37B2A00EB15A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				D22F430E2BC37D6600740E18 /* Search.swift */,
 				D22F43102BC3810600740E18 /* Word.swift */,
+				D2035A6E2BC39C7D0054E5E7 /* PlayAudio.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				D22F43162BC382F400740E18 /* WordVM.swift in Sources */,
 				D22F43112BC3810600740E18 /* Word.swift in Sources */,
 				D21A1D052BC37B2A00EB15A7 /* ContentView.swift in Sources */,
+				D2035A6F2BC39C7D0054E5E7 /* PlayAudio.swift in Sources */,
 				D21A1D032BC37B2A00EB15A7 /* MyDictionaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
