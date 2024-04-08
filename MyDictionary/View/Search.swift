@@ -14,6 +14,8 @@ struct Search: View {
     @State var word: [WordModel?]?
     @State var isLoading = false
     @State var shake = false
+    @State var showError = false
+    var errorMessage = "Please check the spelling and try again!"
     var body: some View {
         NavigationStack {
             VStack {
@@ -28,6 +30,7 @@ struct Search: View {
                 .offset(x: shake ? -10 : 0)
                 Divider()
                 Button(action: {
+                    showError = false
                     if searchText.isEmpty {
                         shake = true
                         withAnimation(Animation.spring(response: 0.2, dampingFraction: 0.2, blendDuration: 0.2)) {
@@ -38,6 +41,8 @@ struct Search: View {
                             if let wordResult = await wordVM.search(word: searchText) {
                                 word = wordResult
                                 navigate = true
+                            } else {
+                                showError = true
                             }
                         }
                     }
@@ -47,6 +52,12 @@ struct Search: View {
                         .frame(width: 50, height: 50)
                 })
                 .padding()
+                if showError {
+                    Text(showError ? errorMessage : "")
+                        .foregroundStyle(.red)
+                        .italic()
+                        .font(.headline)
+                }
                 Spacer()
             }
             .padding(32)
