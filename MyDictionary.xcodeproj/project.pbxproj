@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2035A6C2BC384CA0054E5E7 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2035A6B2BC384CA0054E5E7 /* WordModel.swift */; };
 		D21A1D032BC37B2A00EB15A7 /* MyDictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A1D022BC37B2A00EB15A7 /* MyDictionaryApp.swift */; };
 		D21A1D052BC37B2A00EB15A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A1D042BC37B2A00EB15A7 /* ContentView.swift */; };
 		D21A1D072BC37B2D00EB15A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21A1D062BC37B2D00EB15A7 /* Assets.xcassets */; };
 		D21A1D0A2BC37B2D00EB15A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21A1D092BC37B2D00EB15A7 /* Preview Assets.xcassets */; };
 		D22F430F2BC37D6600740E18 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F430E2BC37D6600740E18 /* Search.swift */; };
 		D22F43112BC3810600740E18 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F43102BC3810600740E18 /* Word.swift */; };
+		D22F43162BC382F400740E18 /* WordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F43152BC382F400740E18 /* WordVM.swift */; };
+		D22F43192BC3831D00740E18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D22F43182BC3831D00740E18 /* Alamofire */; };
+		D22F431B2BC3831D00740E18 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D22F431A2BC3831D00740E18 /* AlamofireDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2035A6B2BC384CA0054E5E7 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 		D21A1CFF2BC37B2A00EB15A7 /* MyDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21A1D022BC37B2A00EB15A7 /* MyDictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDictionaryApp.swift; sourceTree = "<group>"; };
 		D21A1D042BC37B2A00EB15A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +28,7 @@
 		D21A1D092BC37B2D00EB15A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D22F430E2BC37D6600740E18 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		D22F43102BC3810600740E18 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		D22F43152BC382F400740E18 /* WordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22F43192BC3831D00740E18 /* Alamofire in Frameworks */,
+				D22F431B2BC3831D00740E18 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +63,8 @@
 		D21A1D012BC37B2A00EB15A7 /* MyDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				D22F43142BC382D100740E18 /* Model */,
+				D22F43132BC382CB00740E18 /* ViewModel */,
 				D22F43122BC3824D00740E18 /* View */,
 				D21A1D022BC37B2A00EB15A7 /* MyDictionaryApp.swift */,
 				D21A1D042BC37B2A00EB15A7 /* ContentView.swift */,
@@ -81,6 +91,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D22F43132BC382CB00740E18 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D22F43152BC382F400740E18 /* WordVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D22F43142BC382D100740E18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2035A6B2BC384CA0054E5E7 /* WordModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,6 +123,10 @@
 			dependencies = (
 			);
 			name = MyDictionary;
+			packageProductDependencies = (
+				D22F43182BC3831D00740E18 /* Alamofire */,
+				D22F431A2BC3831D00740E18 /* AlamofireDynamic */,
+			);
 			productName = MyDictionary;
 			productReference = D21A1CFF2BC37B2A00EB15A7 /* MyDictionary.app */;
 			productType = "com.apple.product-type.application";
@@ -125,6 +155,9 @@
 				Base,
 			);
 			mainGroup = D21A1CF62BC37B2A00EB15A7;
+			packageReferences = (
+				D22F43172BC3831D00740E18 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = D21A1D002BC37B2A00EB15A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -152,6 +185,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D22F430F2BC37D6600740E18 /* Search.swift in Sources */,
+				D2035A6C2BC384CA0054E5E7 /* WordModel.swift in Sources */,
+				D22F43162BC382F400740E18 /* WordVM.swift in Sources */,
 				D22F43112BC3810600740E18 /* Word.swift in Sources */,
 				D21A1D052BC37B2A00EB15A7 /* ContentView.swift in Sources */,
 				D21A1D032BC37B2A00EB15A7 /* MyDictionaryApp.swift in Sources */,
@@ -360,6 +395,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D22F43172BC3831D00740E18 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D22F43182BC3831D00740E18 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D22F43172BC3831D00740E18 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D22F431A2BC3831D00740E18 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D22F43172BC3831D00740E18 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D21A1CF72BC37B2A00EB15A7 /* Project object */;
 }

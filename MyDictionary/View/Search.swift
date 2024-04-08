@@ -10,6 +10,9 @@ import SwiftUI
 struct Search: View {
     @State var searchText = ""
     @State var navigate = false
+    var wordVM = WordVM()
+    @State var word: [WordModel?]?
+    @State var isLoading = false
     var body: some View {
         NavigationStack {
             VStack {
@@ -19,10 +22,16 @@ struct Search: View {
                         .foregroundStyle(.gray)
                     TextField("Search", text: $searchText)
                         .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
                 }
                 Divider()
                 Button(action: {
-                    navigate = true
+                    Task {
+                        if let wordResult = await wordVM.search(word: searchText) {
+                            word = wordResult
+                            navigate = true
+                        }
+                    }
                 }, label: {
                     Image(systemName: "arrow.right.circle.fill")
                         .resizable()
