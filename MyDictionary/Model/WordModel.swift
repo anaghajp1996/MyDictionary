@@ -8,6 +8,7 @@
 import Foundation
 
 struct WordModel: Decodable {
+    var word: String?
     var phonetic: String?
     var origin: String?
     var meanings: [Meaning]

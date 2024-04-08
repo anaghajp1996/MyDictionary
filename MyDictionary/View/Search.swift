@@ -13,6 +13,7 @@ struct Search: View {
     var wordVM = WordVM()
     @State var word: [WordModel?]?
     @State var isLoading = false
+    @State var shake = false
     var body: some View {
         NavigationStack {
             VStack {
@@ -24,12 +25,20 @@ struct Search: View {
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
                 }
+                .offset(x: shake ? -10 : 0)
                 Divider()
                 Button(action: {
-                    Task {
-                        if let wordResult = await wordVM.search(word: searchText) {
-                            word = wordResult
-                            navigate = true
+                    if searchText.isEmpty {
+                        shake = true
+                        withAnimation(Animation.spring(response: 0.2, dampingFraction: 0.2, blendDuration: 0.2)) {
+                            shake = false
+                        }
+                    } else {
+                        Task {
+                            if let wordResult = await wordVM.search(word: searchText) {
+                                word = wordResult
+                                navigate = true
+                            }
                         }
                     }
                 }, label: {
@@ -41,10 +50,12 @@ struct Search: View {
                 Spacer()
             }
             .padding(32)
-            .background(Color.orange.opacity(0.1))
+            .background(Color.orange.opacity(0.2))
             .foregroundStyle(.orange)
             .navigationDestination(isPresented: $navigate, destination: {
-                Word()
+                if let firstWord = word?.first {
+                    Word(word: firstWord!)
+                }
             })
         }
         .tint(.orange)
